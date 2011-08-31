@@ -3,6 +3,7 @@ import subprocess
 def version():
     """ Returns version (including git revision
     if ajenti runs inside a working tree
+    
     :returns: str
     """
 

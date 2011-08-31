@@ -1,0 +1,22 @@
+Format: 1.8
+Date: Thu, 28 Oct 2010 19:13:29 +0300
+Source: ajenti-plugin-apache
+Binary: ajenti-plugin-apache
+Architecture: all
+Version: 0:2
+Distribution: UNRELEASED
+Urgency: low
+Maintainer: Eugeny Pankov <e@ajenti.org>
+Changed-By: Autobuild Script <e@ajenti.org>
+Description: 
+ ajenti-plugin-apache - Apache plugin for Ajenti
+Changes: 
+ ajenti-plugin-apache (0:2) UNRELEASED; urgency=low
+ .
+   * Build
+Checksums-Sha1: 
+ 1068dbaae37f2a3a2cc39a2cd18d5e52ab70e3f2 970 ajenti-plugin-apache_2_all.deb
+Checksums-Sha256: 
+ a51901bc59bd78b67be027377e78efdd07280f4f60cf0a13a99e14c110a2c68b 970 ajenti-plugin-apache_2_all.deb
+Files: 
+ 7060846e8fd2434b238023099f8e3655 970 admin optional ajenti-plugin-apache_2_all.deb
