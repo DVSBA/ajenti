@@ -2,7 +2,8 @@ from ajenti.api import *
 from ajenti.com import *
 import threading
 import json
-
+import time
+import urllib2
 
 
 class HealthMonitor (Component):
@@ -117,3 +118,28 @@ class HealthExporter (Plugin, URLHandler):
                 'state': mon.get()[i],
             }
         return json.dumps(nd)
+
+
+
+class HubExporter (Component):
+
+    def run(self):
+        while True:
+            try:
+                urllib2.urlopen('http://localhost:3000/api/machine/submit?token=1_6739699399', 
+                    data=self.prepare(), timeout=10).close()
+            except:
+                pass
+            time.sleep(3)
+
+    def prepare(self):
+        clss = self.app.grab_plugins(IMeter)
+        r = {}
+
+        for cls in clss:
+            variants = cls.get_variants()
+            for v in variants:
+                inst = cls.prepare(v)
+                r.setdefault(cls.plugin_id, {})[v] = inst.format_value()['value']
+
+        return json.dumps(r)
