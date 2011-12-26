@@ -6,6 +6,12 @@
     outline: none !important;
 }
 
+.no-transition {
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+}
+
 h1,h2,h3,h4,h5 {
     font-family: Helvetica, sans-serif;
 }
@@ -18,7 +24,7 @@ body, html {
     padding: 0;
     margin: 0;
     height: 100%;
-    font-family: OpenSans, Droid Sans, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 table.layout,
@@ -85,18 +91,19 @@ a:hover { text-decoration: none; }
 }
 
 #topbar {
-    #gradient > .vertical(#333,  #222);
-    border-bottom: 1px solid #181818;
+    #gradient > .vertical(#ddd,  #ccc);
     height: 50px;
-
+    width: 980px;
+    margin: auto;
     > .container {
         padding: 13px 0px 0px 0px;
         line-height: 32px;
         font-size: 22px;
-        color: #ccc;
+        color: #444;
+        text-shadow: 0 1px 0 #eee;
 
         > .logo {
-            padding: 1px 7px 0px 0px;
+            padding: 0 7px 0px 0px;
             display: block;
             float: left;
         }
@@ -105,9 +112,13 @@ a:hover { text-decoration: none; }
 }
 
 #topbar2 {
-    #gradient > .vertical(#222,  #111);
+    width: 980px;
+    margin: auto;
+    #gradient > .vertical(#ccc,  #bbb);
     height: 27px;
-    border-top: 1px solid #303030;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #999;
+    .border-radius(0 0 5px 5px);
 }
 
 
@@ -189,10 +200,10 @@ a:hover { text-decoration: none; }
 
 
 .ui-el-category-counter {
-    font-size: 12px;
+    font-size: 8px;
     display: inline-block;
     float: right;
-    line-height: 16px;
+    line-height: 10px;
     padding: 0 5px 1px;
 
     color: #fff;
@@ -206,32 +217,36 @@ a:hover { text-decoration: none; }
 .ui-el-top-category {
     display: inline-block;
     float: left;
-    margin: -2px 2px 0;
-    border-top: 2px solid transparent;
+    margin: 0 2px 0;
     padding: 2px 8px;
     height: 23px;
 
-    color: #aaa;
+    color: #555;
     font-weight: bold;
     font-size: 13px;
     text-decoration: none;
     line-height: 25px;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
 
     img {
         float: left;
         padding: 5px 5px 0;
     }
 
-    &.selected,
     &:hover {
-        border-top: 2px solid #888;
-        background: #333;
+        background: rgba(255,255,255,0.3);
+        color: #555;
+    }
+
+    &.selected {
+        .gradientBar(#3667b9, #76a3dc);
+        .box-shadow(0 0 5px rgba(0,0,0,.3) inset);
         color: #eee;
+        text-shadow: 0 1px 0 rgba(0,0,0,.5);
     }
 
     &-nohover:hover {
         background: none;
-        border-top: 2px solid transparent;
         color: #aaa;
     }
 
