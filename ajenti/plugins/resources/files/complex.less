@@ -1,5 +1,62 @@
+.ui-el-tabs {
+    position: relative;
+
+    .tab-line {
+        position: absolute;
+        width: 100%;
+        border-top: 1px solid #ccc;
+        height: 1px;
+        top: 13px;
+        left: 0;
+        z-index: 0;
+    }
+}
+
 .ui-el-tab-header > a {
     .transition(none);
+}
+
+
+ul.tabs {
+    border-bottom: none;
+     
+    li {
+        .gradientBar(#fff, #eee);
+        border: 1px solid #ddd;
+        border-right: none;
+        padding: 3px 5px;
+        font-size: 12px;
+        position: relative;
+        z-index: 1;
+
+        a {
+            color: #888;
+            font-weight: bold;
+            text-shadow: none;
+        }
+
+        &:first-child {
+            .border-radius(3px 0 0 3px);
+        }
+
+        &:last-child {
+            .border-radius(0 3px 3px 0);
+            border-right: 1px solid #ddd;
+        }
+
+        &:hover {
+            .gradientBar(#fff, #fff);
+        }
+
+        &:active, &.active {
+            .gradientBar(#6b87ac, #505e72);
+
+            a {
+                color: white;
+                text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+            }
+        }
+    }    
 }
 
 .ui-el-list {
@@ -11,20 +68,17 @@
     list-style: none;
 
     li {
-        padding: 2px;
+        padding: 0 2px;
         width: 100%;
-        line-height: 16px;
+        line-height: 10px;
         color: #555;
 
-        &:hover {
-            background: #eee;
+        &.active {
+            .gradientBar(#6b87ac, #505e72);
+            text-shadow: 0 1px 0 rgba(0,0,0,0.3);
+            color: white;
+            font-weight: bold;
         }
-    }
-
-    li.active {
-        .gradientBar(#d04909,  #922017);
-        color: white;
-        font-weight: bold;
     }
 }
 
@@ -37,6 +91,7 @@
         line-height: 25px;
         display:block;
         margin: 0 0 0 -15px;
+        color: #555;
 
         > img {
             display: inline;

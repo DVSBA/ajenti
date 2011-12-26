@@ -10,7 +10,8 @@ Package: ajenti
 Architecture: all
 Homepage: http://ajenti.org/
 XB-Python-Version: ${python:Versions}
-Depends: ${misc:Depends}, ${python:Depends}, python-lxml (>=2.2.4), python-gevent, python-openssl
+Depends: ${misc:Depends}, ${python:Depends}, python-lxml (>=2.2.4), python-openssl
+Recommends: python-gevent
 Description: Server administration web interface
  It provides rich functionality and support for lots of server software,
  along with system configuration options.

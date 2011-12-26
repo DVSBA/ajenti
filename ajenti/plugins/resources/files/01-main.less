@@ -4,6 +4,7 @@
     -webkit-transition: .2s linear color, .2s linear background-color, .2s linear background-image, .2s linear border-color;
     cursor: default;
     outline: none !important;
+    text-shadow: none;
 }
 
 .no-transition {
@@ -53,19 +54,23 @@ a:hover { text-decoration: none; }
     width: 958px;
     margin: auto;
     overflow: hidden;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
 
     > .sidebar {
         float: left;
         clear: left;
-        width: 149px;
+        width: 148px;
         border-right: 1px solid #aaa;
         background: #f0f0f0;
     }
 
     > .content {
+        background: #fafafa;
         float: left;
         width: 808px;
-        background: #f5f5f5;
+        border-right: 1px solid #ccc;
+        min-height: 500px;
     }
 
     border-left: 1px solid #aaa;
@@ -96,13 +101,14 @@ a:hover { text-decoration: none; }
 }
 
 #topbar {
-    #gradient > .vertical(#ddd,  #ccc);
+    #gradient > .vertical(#eee,  #ddd);
+    border-bottom: 1px solid #ccc;
     height: 50px;
     > .container {
         padding: 13px 0px 0px 0px;
         line-height: 32px;
         font-size: 22px;
-        color: #444;
+        color: #555;
         text-shadow: 0 1px 0 #eee;
 
         > .logo {
@@ -114,12 +120,10 @@ a:hover { text-decoration: none; }
     }
 }
 
-#topbar2 {
-    #gradient > .vertical(#ccc,  #bbb);
+#topbar2 {  
+    #gradient > .vertical(#ddd,  #d0d0d0);
     height: 27px;
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #999;
-    .border-radius(0 0 5px 5px);
+    border-bottom: 1px solid #aaa;
 }
 
 
@@ -184,35 +188,34 @@ a:hover { text-decoration: none; }
 
 .ui-el-categoryfolder {
     width: 152px;
-    height: 28px;
     border-top: none;
     line-height: 26px;
     color: #888;
-    padding: 0 0 0 2px;
+    padding: 5px 0 0 10px;
     font-size: 10px;
     font-weight: bold;
     text-shadow: 0 1px 0 #ffffff;
 }
 
 .ui-el-categoryfolder-children {
-    padding: 0 0 10px;
+    padding: 0 0 5px;
 }
 
 
 
 .ui-el-category-counter {
-    font-size: 8px;
+    font-size: 9px;
     display: inline-block;
     float: right;
     line-height: 10px;
-    padding: 0 5px 1px;
+    padding: 0 3px 1px;
 
     color: #fff;
-    text-shadow: 0 1px 0 #720000;
+    text-shadow: 0 -1px 0 #720000;
     font-weight: bold;
 
     .border-radius(10px);
-    .gradientBar(#d04909,  #922017);
+    background: #d04909;
 }
 
 .ui-el-top-category {
@@ -240,7 +243,7 @@ a:hover { text-decoration: none; }
     }
 
     &.selected {
-        .gradientBar(#3667b9, #76a3dc);
+        .gradientBar(#505e72, #6b87ac);
         .box-shadow(0 0 5px rgba(0,0,0,.3) inset);
         color: #eee;
         text-shadow: 0 1px 0 rgba(0,0,0,.5);
@@ -259,11 +262,12 @@ a:hover { text-decoration: none; }
 
 
 .ui-el-category {
-    width: 130px;
+    width: 129px;
     line-height: 26px;
-    padding: 3px 4px 4px 15px;
+    padding: 2px 4px 1px 15px;
     margin: 3px 0;
     .transition(none);
+    border-top: 1px solid transparent;
 
     * {
         .transition(none);
@@ -274,7 +278,7 @@ a:hover { text-decoration: none; }
     }
 
     &.selected {
-        .gradientBar(#76a3dc, #3667b9);
+        .gradientBar(#6b87ac, #505e72);
         .box-shadow(0 0 5px rgba(0,0,0,.3) inset);
         color: #eee;
         text-shadow: 0 1px 0 rgba(0,0,0,.5);
@@ -282,23 +286,24 @@ a:hover { text-decoration: none; }
 
     .text {
         color: #444;
-        font-size: 13px;
+        font-size: 12px;
         display: inline-block;
         line-height: 16px;
         padding: 0 0 2px;
+        text-shadow: none;
     }
 
-    &.selected .text {
+    &.selected .text, &:active .text {
         color: white;
         line-height: 16px;
         font-weight: bold;
-        text-shadow: 0 1px 0 #821007;
+        text-shadow: 0 1px 0 rgba(0,0,0,0.3);
     }
 
     .icon {
         width: 16px;
         height: 16px;
-        padding: 1px 5px 0 0;
+        padding: 0 5px 0 0;
         float: left;
     }
 
@@ -313,22 +318,23 @@ a:hover { text-decoration: none; }
 
 
 .ui-el-message {
-    .alert-message();
+    padding: 5px 10px;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    color: white;
+    background-image: url('/dl/core/ui/alert.png');
 }
 
 .ui-el-message-info {
-    .alert-message.success();
+    background-color: #00b904;
 }
 
 .ui-el-message-warn {
     background-color: #fa3;
-    background-image: url('/dl/core/ui/alert.png');
 }
 
 .ui-el-message-err {
-    .alert-message.error();
     background-color: #e43;
-    background-image: url('/dl/core/ui/alert.png');
 }
 
 

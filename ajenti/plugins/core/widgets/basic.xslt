@@ -66,7 +66,7 @@
 
 
 <xsl:template match="linklabel">
-    <a href="#" onclick="javascript:return Ajenti.query('/handle/linklabel/click/{@id}');" class="ui-el-link" style="{x:iif(@bold, 'font-weight: bold;', '')}">
+    <a href="#" onclick="javascript:return Ajenti.query('/handle/linklabel/click/{@id}');" class="ui-el-label-1" style="{x:iif(@bold, 'font-weight: bold;', '')}">
         <xsl:value-of select="@text" />
     </a>
 </xsl:template>

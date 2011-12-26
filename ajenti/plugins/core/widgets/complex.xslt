@@ -23,10 +23,11 @@
 </xsl:template>
 
 <xsl:template match="tabcontrol">
-    <div>
+    <div class="ui-el-tabs">
         <ul id="{@id}" class="tabs">
             <xsl:apply-templates select="./tabheader" />
         </ul>
+        <div class="tab-line" />
         <div class="tab-content">
             <xsl:apply-templates select="./tabbody" />
         </div>
